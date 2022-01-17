@@ -15,10 +15,11 @@ export default function crearStack() {
         <Stack.Screen name="Crear fruta" component={crearScreen} 
         options={{
           headerTitle : 'Crear fruta',
-          headerTintColor : '#FFFFFF',
+          headerTintColor : '#FF2D00',
           headerStyle: {
             backgroundColor : '#FF2D00',
-          }
+          },
+          headerShown: false,
             
           }}/>
       </Stack.Navigator>

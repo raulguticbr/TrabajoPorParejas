@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 export default function listaScreen() {
     return(
         <View>
-            <Text>Hola</Text>
+            <Text>manolo</Text>
         </View>
 
     );
