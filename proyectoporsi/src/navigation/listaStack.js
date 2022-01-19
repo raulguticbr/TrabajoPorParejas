@@ -14,7 +14,7 @@ export default function listaStack() {
       <Stack.Navigator>
         <Stack.Screen name="Lista de fruta" component={listaScreen} 
         options={{
-          headerTitle : 'Listado de usuarios',
+          headerTitle : 'Listado de frutas',
           headerTintColor : '#FFFFFF',
           headerStyle: {
             backgroundColor : '#FF2D00',
