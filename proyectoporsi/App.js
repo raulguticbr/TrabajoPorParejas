@@ -24,7 +24,7 @@ export default function App() {
             tabBarActiveTintColor: 'tomato',
             tabBarInactiveTintColor: 'grey',
           })}>
-    <Tab.Screen name="Lista de frutas" component={listaStack}/>
+    <Tab.Screen name="Lista de frutas" component={listaStack} />
     <Tab.Screen name="Crear frutas" component={crearStack}/>
     </Tab.Navigator>
     </NavigationContainer>
