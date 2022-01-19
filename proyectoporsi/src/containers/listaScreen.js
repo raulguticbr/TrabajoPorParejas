@@ -21,6 +21,8 @@ export default function listaScreen() {
             .then(response => response.json())
             .then((responseJson) => {
                 setFruits(responseJson);
+                console.log(responseJson);
+                console.log(responseJson.length);
                 setLoading(false);
             })
             .catch(error => console.log(error));
@@ -33,7 +35,7 @@ export default function listaScreen() {
 
 
     function renderItem({ item }) {
-        if (item.name == 'Pear') {
+        if (item.name === 'Pera') {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
@@ -47,7 +49,8 @@ export default function listaScreen() {
                 </View>
             )
         }
-        if (item.name == 'Banana') {
+        if (item.name === 'Platano') {
+            console.log('Platano')
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
@@ -61,21 +64,7 @@ export default function listaScreen() {
                 </View>
             )
         }
-        if (item.name == 'Platano') {
-            return (
-                <View style={{ alignItems: 'center', flexDirection: 'row' }}>
-                    <View>
-                        <Image style={{ width: 120, height: 100, marginRight: 50 }} source={require('../../assets/platano.png')} />
-                    </View>
-                    <View>
-                        <Text style={{ fontWeight: 'bold' }}>Nombre: <Text style={{ fontweight: 'normal' }}> {item.name}</Text></Text>
-                        <Text style={{ fontweight: 'bold' }}>Precio: <Text style={{ fontweight: 'normal' }}> {item.price}</Text></Text>
-                    </View>
-
-                </View>
-            )
-        }
-        if (item.name == 'Orange') {
+        if (item.name === 'Naranja') {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
@@ -89,7 +78,7 @@ export default function listaScreen() {
                 </View>
             )
         }
-        if (item.name == 'Grapes') {
+        if (item.name === 'Uvas') {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
@@ -103,7 +92,7 @@ export default function listaScreen() {
                 </View>
             )
         }
-        if (item.name == 'Pineapple') {
+        if (item.name === 'Piña') {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
@@ -117,7 +106,7 @@ export default function listaScreen() {
                 </View>
             )
         }
-        if (item.name == 'Kiwi') {
+        if (item.name === 'Kiwi') {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
@@ -131,7 +120,7 @@ export default function listaScreen() {
                 </View>
             )
         }
-        if (item.name == 'Peach') {
+        if (item.name === 'Melocoton') {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
@@ -145,7 +134,7 @@ export default function listaScreen() {
                 </View>
             )
         }
-        if (item.name == 'Apple') {
+        if (item.name === 'Manzana') {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                     <View>
