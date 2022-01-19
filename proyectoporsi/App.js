@@ -14,9 +14,9 @@ export default function App() {
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
               if (route.name === 'Lista de frutas') {
-                iconName = focused ? 'link' : 'link-2';
-              } else if (route.name === 'Información') {
-                iconName = focused ? 'message-circle' : 'message-square';
+                iconName = focused ? 'wind' : 'menu';
+              } else if (route.name === 'Crear frutas') {
+                iconName = focused ? 'crosshair' : 'divide-circle';
               }
               
               return <Icons name={iconName} size={size} color={color} />;
