@@ -10,6 +10,12 @@ export default function App() {
   return(
     <NavigationContainer>
     <Tab.Navigator
+     tabBarOptions={{
+      activeTintColor: '#000',
+      activeBackgroundColor: '#CD5C5C',
+      inactiveTintColor: '#FFF',
+      inactiveBackgroundColor: '#F08080',
+    }}
     screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
@@ -21,15 +27,16 @@ export default function App() {
               
               return <Icons name={iconName} size={size} color={color} />;
             },
-            tabBarActiveTintColor: 'tomato',
-            tabBarInactiveTintColor: 'grey',
+            tabBarActiveTintColor: 'pink',
+            tabBarInactiveTintColor: 'black',
           })}>
-    <Tab.Screen name="Lista de frutas" component={listaStack} />
-    <Tab.Screen name="Crear frutas" component={crearStack}/>
+    <Tab.Screen name="Lista de frutas" component={listaStack}  options={{ headerStyle: { backgroundColor: '#F08080' },headerTitleAlign: 'center'}}/>
+    <Tab.Screen name="Crear frutas" component={crearStack}  options={{ headerStyle: { backgroundColor: '#F08080' },headerTitleAlign: 'center'}}/>
     </Tab.Navigator>
     </NavigationContainer>
 
 
   );
 
+  
  }

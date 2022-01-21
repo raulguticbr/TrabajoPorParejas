@@ -3,6 +3,7 @@ import { Text, View, TextInput, Button, Alert } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 export default function listaScreen() {
     const [nom_fruta, setNom_fruta] = useState("Manzana");
+    const [fruits, setFruits] = useState(null);
     const [number, onChangeNumber] = useState(0);
     const [selectedLanguage, setSelectedLanguage] = useState('jhghjfgh');
     function llamadaPost() {
@@ -27,6 +28,18 @@ export default function listaScreen() {
                 .catch(error => console.log(error))
         );
     }
+    function getFruits() {
+        fetch("http://10.0.2.2:8080/fruits")
+            .then(response => response.json())
+            .then((responseJson) => {
+                setFruits(responseJson);
+                console.log(responseJson);
+                console.log(responseJson.length);
+                setLoading(false);
+            })
+            .catch(error => console.log(error));
+    }
+
     return (
 
         <View>
@@ -49,11 +62,6 @@ export default function listaScreen() {
                 <Picker.Item label="Melocoton" value="Melocoton" />
                 <Picker.Item label="Kiwi" value="Kiwi" />
             </Picker>
-            {/* <TextInput
-                style={{ borderColor: 'black', borderWidth: 1, width: 300, marginVertical: 10, marginVertical: 10 }}
-                onChangeText={setNom_fruta}
-                value={nom_fruta}
-            /> */}
 
             <View style={{ alignItems: 'center' }}>
                 <Text>Aqui introduce el precio que quieres que cueste la fruta seleccionada</Text>
@@ -81,3 +89,4 @@ export default function listaScreen() {
 
 
 }
+
