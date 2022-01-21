@@ -3,7 +3,6 @@ import { Text, View, TextInput, Button, Alert } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 export default function listaScreen() {
     const [nom_fruta, setNom_fruta] = useState("Manzana");
-    const [fruits, setFruits] = useState(null);
     const [number, onChangeNumber] = useState(0);
     function llamadaPost() {
         return (
@@ -26,17 +25,6 @@ export default function listaScreen() {
                 })
                 .catch(error => console.log(error))
         );
-    }
-    function getFruits() {
-        fetch("http://10.0.2.2:8080/fruits")
-            .then(response => response.json())
-            .then((responseJson) => {
-                setFruits(responseJson);
-                console.log(responseJson);
-                console.log(responseJson.length);
-                setLoading(false);
-            })
-            .catch(error => console.log(error));
     }
 
     return (
