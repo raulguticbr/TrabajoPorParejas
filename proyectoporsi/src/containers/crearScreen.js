@@ -5,7 +5,6 @@ export default function listaScreen() {
     const [nom_fruta, setNom_fruta] = useState("Manzana");
     const [fruits, setFruits] = useState(null);
     const [number, onChangeNumber] = useState(0);
-    const [selectedLanguage, setSelectedLanguage] = useState('jhghjfgh');
     function llamadaPost() {
         return (
             fetch('http://10.0.2.2:8080/fruits', {
