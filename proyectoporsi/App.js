@@ -10,26 +10,33 @@ export default function App() {
   return(
     <NavigationContainer>
     <Tab.Navigator
+     tabBarOptions={{
+      activeTintColor: '#000',
+      activeBackgroundColor: '#CD5C5C',
+      inactiveTintColor: '#FFF',
+      inactiveBackgroundColor: '#F08080',
+    }}
     screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
               if (route.name === 'Lista de frutas') {
-                iconName = focused ? 'link' : 'link-2';
-              } else if (route.name === 'Información') {
-                iconName = focused ? 'message-circle' : 'message-square';
+                iconName = focused ? 'wind' : 'menu';
+              } else if (route.name === 'Crear frutas') {
+                iconName = focused ? 'crosshair' : 'divide-circle';
               }
               
               return <Icons name={iconName} size={size} color={color} />;
             },
-            tabBarActiveTintColor: 'tomato',
-            tabBarInactiveTintColor: 'grey',
+            tabBarActiveTintColor: 'pink',
+            tabBarInactiveTintColor: 'black',
           })}>
-    <Tab.Screen name="Lista de frutas" component={listaStack}/>
-    <Tab.Screen name="Crear frutas" component={crearStack}/>
+    <Tab.Screen name="Lista de frutas" component={listaStack}  options={{ headerStyle: { backgroundColor: '#F08080' },headerTitleAlign: 'center'}}/>
+    <Tab.Screen name="Crear frutas" component={crearStack}  options={{ headerStyle: { backgroundColor: '#F08080' },headerTitleAlign: 'center'}}/>
     </Tab.Navigator>
     </NavigationContainer>
 
 
   );
 
+  
  }

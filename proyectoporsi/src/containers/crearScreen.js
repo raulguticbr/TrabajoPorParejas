@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Text, View, TextInput, Button, Alert } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 export default function listaScreen() {
-    const [nom_fruta, setNom_fruta] = useState("");
+    const [nom_fruta, setNom_fruta] = useState("Manzana");
+    const [fruits, setFruits] = useState(null);
     const [number, onChangeNumber] = useState(0);
     const [selectedLanguage, setSelectedLanguage] = useState('jhghjfgh');
     function llamadaPost() {
@@ -27,6 +28,18 @@ export default function listaScreen() {
                 .catch(error => console.log(error))
         );
     }
+    function getFruits() {
+        fetch("http://10.0.2.2:8080/fruits")
+            .then(response => response.json())
+            .then((responseJson) => {
+                setFruits(responseJson);
+                console.log(responseJson);
+                console.log(responseJson.length);
+                setLoading(false);
+            })
+            .catch(error => console.log(error));
+    }
+
     return (
 
         <View>
@@ -40,25 +53,15 @@ export default function listaScreen() {
                 onValueChange={(itemValue) =>
                     setNom_fruta(itemValue)
                 }>
-                <Picker.Item label="Naranja" value="Naranja" />
                 <Picker.Item label="Manzana" value="Manzana" />
-                <Picker.Item label="Mandarina" value="Mandarina" />
+                <Picker.Item label="Naranja" value="Naranja" />
                 <Picker.Item label="Pera" value="Pera" />
                 <Picker.Item label="Piña" value="Piña" />
-                <Picker.Item label="Papaya" value="Papaya" />
                 <Picker.Item label="Platano" value="Platano" />
-                <Picker.Item label="Fresa" value="Fresa" />
-                <Picker.Item label="Mango" value="Mango" />
-                <Picker.Item label="Albaricoque" value="Albaricoque" />
-                <Picker.Item label="Frambuesa" value="Frambuesa" />
-                <Picker.Item label="Tomate" value="Tomate" />
                 <Picker.Item label="Uvas" value="Uvas" />
+                <Picker.Item label="Melocoton" value="Melocoton" />
+                <Picker.Item label="Kiwi" value="Kiwi" />
             </Picker>
-            {/* <TextInput
-                style={{ borderColor: 'black', borderWidth: 1, width: 300, marginVertical: 10, marginVertical: 10 }}
-                onChangeText={setNom_fruta}
-                value={nom_fruta}
-            /> */}
 
             <View style={{ alignItems: 'center' }}>
                 <Text>Aqui introduce el precio que quieres que cueste la fruta seleccionada</Text>
@@ -86,3 +89,4 @@ export default function listaScreen() {
 
 
 }
+
