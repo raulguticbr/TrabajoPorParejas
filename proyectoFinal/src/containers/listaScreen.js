@@ -92,7 +92,7 @@ export default function listaScreen() {
             return (
                 <View style={{ alignItems: 'center', flexDirection: 'row', marginBottom: 10 }}>
                     <View>
-                        <Image style={{ width: 120, height: 100, marginRight: 50 }} source={require('../../assets/piña.png')} />
+                        <Image style={{ width: 120, height: 100, marginRight: 50 }} source={require('../../assets/pina.png')} />
                     </View>
                     <View>
                         <Text style={{ fontWeight: 'bold' }}>{item.name} {item.price}€</Text>
